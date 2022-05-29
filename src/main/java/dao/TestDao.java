@@ -2,7 +2,7 @@ package dao;
 
 import java.util.List;
 
-import metier.entities.Etudiant;
+
 import metier.entities.Stage;
 
 public class TestDao {
@@ -22,13 +22,11 @@ public class TestDao {
 		
 		//Insert Stage Test
 		StageDaoImp sdao = new StageDaoImp();
-		Stage st = sdao.save(new Stage(5,"a","a",300));
-		System.out.print(st);
+		//Stage st = sdao.save(new Stage(5,"a","a",300));
+		
+
 		//Get Stage List Test
-		List<Stage> stgs = sdao.Stages();
-		for(Stage s : stgs) {
-			System.out.println(s);
-		}
+		sdao.deleteStage(6);
 	}
 
 }

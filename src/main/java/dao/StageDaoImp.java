@@ -59,25 +59,92 @@ public class StageDaoImp implements IStageDao{
 
 	@Override
 	public List<Stage> stageIds(int Id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Stage> stages=new ArrayList<Stage>();
+		Connection conn=SingletonConnection.getConnection();
+		try {
+			PreparedStatement ps = conn.prepareStatement("select * from stage where idEtudiant=?");
+			ps.setInt(1, Id);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Stage s = new Stage();
+				s.setId(rs.getInt("stage"));
+				s.setIdEtudiant(rs.getInt("idDepartement"));
+				s.setDescription(rs.getString("description"));
+				s.setDateDebut(rs.getString("dateDebut"));
+				s.setPeriode(rs.getInt("periode"));
+				
+				stages.add(s);
+		}
+		
+		
+		
+		
+
+	
+	}catch(SQLException x) {
+		x.printStackTrace();
+	}
+
+		return stages;
 	}
 
 	@Override
-	public Stage getEtudiant(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Stage getStage(int id) {
+		Connection conn=SingletonConnection.getConnection();
+		Stage s = new Stage();
+		try {
+			PreparedStatement ps = conn.prepareStatement("select * from stage where id=?");
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				s.setId(rs.getInt("id"));
+				s.setIdEtudiant(rs.getInt("idEtudiant"));
+				s.setDateDebut(rs.getString("dateDebut"));
+				s.setDescription(rs.getString("description"));
+				s.setPeriode(rs.getInt("periode"));
+			}
+		}catch(SQLException x) {
+			x.printStackTrace();
+		}
+		
+		
+		
+		//return 
+		return s;
+
 	}
 
 	@Override
-	public Stage updateEtudiant(Stage s) {
-		// TODO Auto-generated method stub
-		return null;
+	public Stage updateStage(Stage s) {
+		Connection conn=SingletonConnection.getConnection();
+		try {
+			PreparedStatement ps = conn.prepareStatement("UPDATE stage SET idEtudiant=?, description=?, dateDebut=?, periode=? WHERE id=?");
+			ps.setInt(1,s.getIdEtudiant());
+			ps.setString(2, s.getDescription());
+			ps.setString(3, s.getDateDebut());
+			ps.setInt(4, s.getPeriode());
+			ps.setInt(5, s.getId());
+			ps.executeUpdate();
+			ps.close();
+		} catch(SQLException x) {
+			x.printStackTrace();
+		}
+		return s;
 	}
 
 	@Override
-	public void deleteEtudiant(int id) {
-		// TODO Auto-generated method stub
+	public void deleteStage(int id) {
+		Connection conn=SingletonConnection.getConnection();
+		try {
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM STAGE WHERE ID=?");
+			ps.setInt(1, id);
+			ps.executeUpdate();
+			ps.close();
+			
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 

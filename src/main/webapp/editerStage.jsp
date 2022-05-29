@@ -14,29 +14,33 @@
 <div class="container">
 <div class="card">
   <div class="card-header">
-    Modification Etudiant
+    Modifier Informations Stage
   </div>
   <div class="card-body">
-      <form action="update.do" method="post" >
+      <form action="update2.do" method="post" >
       <div  class="form-group" hidden >
        <label class="control-label">ID Etudiant :</label>
-       <input type="text" name="id" class="form-control" value="${p.id}" />
+       <input type="text" name="id" class="form-control" value="${s.id}" />
       </div>
       <div class="form-group">
     
        <p>ID : ${p.id}</p>
       </div>
       <div class="form-group">
-       <label class="control-label">Nom:</label>
-       <input type="text" name="nom" class="form-control" value="${p.nom}"/>
+       <label class="control-label">ID ETUDIANT:</label>
+       <input type="number" name="idEtudiant" class="form-control" value="${s.idEtudiant}"/>
       </div>
       <div class="form-group">
-       <label class="control-label">Prenom :</label>
-       <input type="text" name="prenom" class="form-control" value="${p.prenom}"/>
+       <label class="control-label">DESCRIPTION :</label>
+       <input type="text" name="description" class="form-control" value="${s.description}"/>
       </div>
       <div class="form-group">
-       <label class="control-label">Departement :</label>
-       <input type="text" name="departement" class="form-control" value="${p.departement}"/>
+       <label class="control-label">DATE DEBUT :</label>
+       <input type="date" name="dateDebut" class="form-control" value="${s.dateDebut}"/>
+      </div>
+      <div class="form-group">
+       <label class="control-label">PERIODE :</label>
+       <input type="number" name="periode" class="form-control" value="${s.periode}"/>
       </div>
       <div>
         <button type="submit" class="btn btn-primary">Modifier</button>

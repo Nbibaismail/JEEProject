@@ -5,10 +5,10 @@
         <a class="nav-link" href="index.do">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="saisie.do">Saisie</a>
+        <a class="nav-link" href="index.do">Etudiants</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="saisie.do">Stages</a>
+        <a class="nav-link" href="index2.do">Stages</a>
       </li>
      </ul>
   </div>

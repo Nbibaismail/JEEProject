@@ -14,23 +14,35 @@
 <div class="container">
 <div class="card">
   <div class="card-header">
-    Confirmation Ajout Produit
+    Etudiant 
   </div>
   <div class="card-body">
+  
+  		<p>Nom : ${etudiant.nom } </p>
+  		
+  		<p>Prenom : ${etudiant.prenom } </p>
+  		
+  		
+  		<p>Prenom : ${etudiant.departement } </p>
+  		
+  		<p>Etat Dossier : Etat Dossier </p>
       
-      <div class="form-group">
-       <label class="control-label">Nom  :</label>
-       <input type="text" name="Nom" class="form-control" value="${produit.prenom }"/>
-         
-       <label class="control-label">Prenom</label>
-       <input type="text" name="Nom" class="form-control" value="${produit.nom }"/>
-      </div>
       
-      <div class="control-label">
-       <label class="control-label">Departement :</label>
-       <input type="text" name="Prix" class="form-control" value="${produit.departement }"/>
-      </div>
+      
+       
+       <div align="center">
+       <button id="myButton0" class="btn btn-success" >OK</button>
+       <script type="text/javascript">
+   		 document.getElementById("myButton0").onclick = function () {
+       	 location.href = "index.do";
+  		  };
+		</script>
+		
+       
+       
        </div>
+       
+       
          
   </div>
 </div>

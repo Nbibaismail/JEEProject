@@ -13,21 +13,25 @@
 <div class="container">
 <div class="card">
   <div class="card-header">
-    Ajouter Etudiant
+    Ajouter Stage
   </div>
   <div class="card-body">
-      <form action="save.do" method="post">
+      <form action="save2.do" method="post">
       <div class="form-group">
-       <label class="control-label">Nom Etudiant :</label>
-       <input type="text" name="nom" class="form-control"/>
+       <label class="control-label">Id Etudiant :</label>
+       <input type="text" name="idEtudiant" class="form-control"/>
       </div>
       <div class="form-group">
-       <label class="control-label">Prenom Etudiant</label>
-       <input type="text" name="prenom" class="form-control"/>
+       <label class="control-label">Description Stage</label>
+       <input type="text" name="description" class="form-control"/>
       </div>
       <div class="form-group">
-       <label class="control-label">Departement Etudiant</label>
-       <input type="text" name="departement" class="form-control"/>
+       <label class="control-label">Date Debut</label>
+       <input type="date" name="dateDebut" class="form-control"/>
+      </div>
+      <div class="form-group">
+       <label class="control-label">Durée</label>
+       <input type="text" name="periode" class="form-control"/>
       </div>
       <div>
         <button type="submit" class="btn btn-primary">Ajouter</button>

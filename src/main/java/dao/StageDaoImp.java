@@ -67,8 +67,8 @@ public class StageDaoImp implements IStageDao{
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				Stage s = new Stage();
-				s.setId(rs.getInt("stage"));
-				s.setIdEtudiant(rs.getInt("idDepartement"));
+				s.setId(rs.getInt("id"));
+				s.setIdEtudiant(rs.getInt("idEtudiant"));
 				s.setDescription(rs.getString("description"));
 				s.setDateDebut(rs.getString("dateDebut"));
 				s.setPeriode(rs.getInt("periode"));

@@ -1,4 +1,4 @@
-<%@ page language ="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+a<%@ page language ="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
@@ -17,26 +17,23 @@
 
 
 <div class="card-header">
-Rechercher Etudiants
+Rechercher Stage
 </div>
 
 <!-- Search Bar -->
 <div class ="card-body">
 <form action="chercher.do" method="get">
 <label>Departement</label>
-<input type ="text" name="motCle" value ="${model.rechercheDpt}">
+<input type ="text" name="motCle" value =" ${model.rechercheDpt}">
 <button type="submit" class="btn btn-primary">Chercher</button>
 </form>
-<div class="card-body"><button onclick="window.location.href = 'saisie.do'" class ="btn btn-primary"><i class="bi bi-activity"></i> + Ajouter Etudiant </button></div>
-
-
 
 <!-- Data Table -->
 <table class="table table-striped">
 
 <!-- Table Header -->
 <tr>
-<th>ID</th> <th>Nom</th> <th>Prenom</th> <th>Departement</th> <th>Supprimer</th>  <th>MAJ</th>
+<th>ID</th> <th>Nom</th> <th>Prenom</th> <th>Departement</th>
 </tr>
 <!-- Table Iterator -->
 <c:forEach  items="${model.ets}" var ="p">
@@ -71,4 +68,15 @@ Rechercher Etudiants
 
 </body>
 
+</html><%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
 </html>
